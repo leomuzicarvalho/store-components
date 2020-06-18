@@ -11,6 +11,7 @@ import { useCssHandles } from 'vtex.css-handles'
 // eslint-disable-next-line no-unused-vars
 import styles from './styles.css'
 import autocomplete from './queries/autocomplete.gql'
+import encodeForwardSlash from '../../utils/encodeForwardSlash'
 
 const MIN_RESULTS_WIDTH = 320
 const CSS_HANDLES = [
@@ -67,6 +68,7 @@ const AutocompleteResults = ({
     hints: { mobile },
   } = useRuntime()
   const handles = useCssHandles(CSS_HANDLES)
+  const encodedInputValue = encodeForwardSlash(inputValue)
 
   const listStyle = useMemo(
     () => ({
@@ -162,7 +164,7 @@ const AutocompleteResults = ({
               <li
                 {...getItemProps({
                   key: `ft${inputValue}`,
-                  item: { term: inputValue },
+                  item: { term: encodedInputValue },
                   index: 0,
                   onClick: handleItemClick,
                 })}
@@ -180,7 +182,7 @@ const AutocompleteResults = ({
                     {fullTextSearchLabel}
                   </a>
                 ) : (
-                  renderSearchByClick(inputValue)
+                  renderSearchByClick(encodedInputValue)
                 )}
               </li>
 

@@ -48,6 +48,7 @@ The `infoCard` block allows you to **display content combining image and text** 
 | `callToActionLinkTarget` | `LinkTargetEnum` | Where to display the linked URL when CTA component is clicked.  | `"_self"` |
 | `imageUrl` | `String` | URL of the image to be used on desktop. | `""` |
 | `mobileImageUrl` | `String` |  URL of the image to be used on mobile. If you do not provide any, the desktop image url will be used. | `null` |
+| `imageActionUrl` | `String` | URL to be redirected when image is clicked. | `""` |
 | `blockClass` | `String` | Adds an extra class name to ease styling. | `null` |
 | `htmlId` | `String` | Adds an ID to the container element. | `null` |
 | `linkTarget` | `LinkTargetEnum` | Where to display the linked URL when `info-card` block is clicked. | `"_self"` |
